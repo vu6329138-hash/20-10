@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#190c2c">
+<title>For the Queens of Our Class ✨ | 20.10</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+:root{
+ --night:#170d29;--plum:#32113e;--rose:#ff5c9a;--pink:#ffb0d0;--gold:#ffdf9b;
+ --cream:#fff8f5;--muted:#eac8db;--glass:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--cream);font-family:'DM Sans',system-ui,sans-serif;background:
+ radial-gradient(ellipse at 15% 12%,#752b72 0,transparent 32%),
+ radial-gradient(ellipse at 85% 35%,#4c245e 0,transparent 35%),
+ radial-gradient(ellipse at 50% 100%,#4e193d 0,transparent 42%),var(--night);
+ min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E")}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+#sky,#petals,#sparkles,#trail{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#sky{z-index:0}#petals{z-index:5}#sparkles{z-index:6}#trail{z-index:8}
+.star{position:absolute;color:#ffe4ac;text-shadow:0 0 12px #ffb5d7;animation:twinkle var(--dur) ease-in-out infinite;opacity:.3}
+@keyframes twinkle{0%,100%{transform:scale(.55) rotate(0);opacity:.22}50%{transform:scale(1.25) rotate(25deg);opacity:1}}
+.orb{position:absolute;width:var(--size);height:var(--size);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd8ecaa,#ff70bb11 60%,transparent 72%);filter:blur(1px);animation:floatOrb var(--dur) ease-in-out infinite alternate}
+@keyframes floatOrb{to{transform:translate(var(--dx),var(--dy)) scale(1.2)}}
+main{position:relative;z-index:1;width:min(1100px,92vw);margin:auto;padding:22px 0 65px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0 22px;color:#f3cde2;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand-icon{display:grid;place-items:center;width:35px;height:35px;border:1px solid #ffb4d8;border-radius:12px;background:#ffffff10;font-size:1.2rem;box-shadow:0 0 24px #ff6fa333}
+.nav-tag{border:1px solid #ffffff28;border-radius:99px;padding:8px 12px;background:#ffffff09;letter-spacing:.08em}
+.hero{text-align:center;padding:clamp(35px,7vw,85px) 0 55px;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid #ffbedb60;background:#ffffff0b;border-radius:999px;color:#ffd8e8;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 0 35px #ff5c9a12}
+.pulse{width:7px;height:7px;border-radius:50%;background:#ff8fbb;box-shadow:0 0 0 0 #ff8fbb88;animation:pulse 1.7s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px #ff8fbb00}}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(3rem,10vw,7.8rem);line-height:.97;letter-spacing:-.055em;margin:28px 0 18px;font-weight:700}
+h1 .line1{display:block;color:#fff4f8;text-shadow:0 5px 40px #ff8ab633}
+h1 .line2{display:block;background:linear-gradient(100deg,#ff8ab9 5%,#ffe8ac 48%,#ffaad1 85%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 22px #ff71b42b)}
+.hero-sub{max-width:680px;margin:0 auto;color:#efd5e5;font-size:clamp(1rem,2.5vw,1.18rem);line-height:1.9}
+.hero-flower{font-size:clamp(3.7rem,10vw,6rem);margin:30px 0 20px;filter:drop-shadow(0 0 30px #ff8bc766);animation:bouquet 4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bouquet{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-10px)}}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0 0}
+.btn{position:relative;overflow:hidden;border:1px solid #ffffff28;border-radius:999px;padding:14px 22px;color:white;background:#ffffff0b;transition:transform .25s,box-shadow .25s,border-color .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #ff4e9a24;border-color:#ffb5d8}
+.btn.primary{color:#35112e;font-weight:700;border:0;background:linear-gradient(115deg,#ffe4aa,#ff9bc7 55%,#ffc0dc);box-shadow:0 8px 30px #ff70ad30}
+.btn.primary:after{content:"";position:absolute;top:-50%;left:-35%;width:20%;height:200%;background:#ffffff99;transform:rotate(22deg);transition:left .65s}
+.btn.primary:hover:after{left:125%}
+.btn .ico{margin-right:7px}
+.scroll-hint{margin-top:35px;color:#d5a8c6;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;animation:hint 2s ease-in-out infinite}
+@keyframes hint{50%{transform:translateY(5px);opacity:.55}}
+.section{margin:26px 0;padding:clamp(24px,5vw,52px);border-radius:30px;border:1px solid #ffffff1e;background:linear-gradient(135deg,#ffffff10,#ffffff04);box-shadow:0 25px 80px #08020f30;backdrop-filter:blur(14px);position:relative;overflow:hidden}
+.section:before{content:"";position:absolute;inset:0 auto 0 0;width:2px;background:linear-gradient(transparent,#ff90c3,#ffe5a3,transparent);opacity:.8}
+.section-head{text-align:center;margin-bottom:28px}
+.eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#ffb6d6}
+h2{font:600 clamp(1.8rem,5vw,3.1rem)/1.15 'Playfair Display',Georgia,serif;margin:12px 0;color:#fff1f7}
+.lead{color:#e4c5d9;line-height:1.8;max-width:650px;margin:0 auto}
+.letterbox{border:1px solid #ffcee21c;background:#1d1029aa;border-radius:22px;padding:clamp(22px,4vw,40px);line-height:2;font-size:1.04rem;color:#f8e4ef;position:relative}
+.letterbox:before,.letterbox:after{position:absolute;color:#ffcae1;font:3rem Georgia;opacity:.7}
+.letterbox:before{content:'“';left:14px;top:0}.letterbox:after{content:'”';right:14px;bottom:-17px}
+.letterbox strong{color:#ffcae0}
+.signature{text-align:right;color:#ffd8e7;font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px;margin-top:28px}
+.gift{min-height:160px;border:1px solid #ffffff19;border-radius:20px;padding:21px 14px;text-align:center;background:linear-gradient(150deg,#ffffff0d,#ff8fc20a);transition:transform .25s,border-color .25s,background .25s;position:relative;overflow:hidden}
+.gift:hover{transform:translateY(-7px) rotate(-1deg);border-color:#ffb7d5a0;background:#ff9bc717}
+.gift .emoji{display:block;font-size:2.2rem;margin-bottom:12px;filter:drop-shadow(0 0 13px #ff82b72b)}
+.gift b{display:block;color:#ffe8f1;margin-bottom:7px}
+.gift small{color:#d9b7ce;line-height:1.6;display:block}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.moment{border-top:1px solid #ffadd04d;padding:20px 14px 0;text-align:center}
+.moment .num{font:700 2rem 'Playfair Display',Georgia,serif;color:#ffd79d}
+.moment h3{margin:8px 0;color:#ffe6f1}
+.moment p{margin:0;color:#d7b9ce;font-size:.9rem;line-height:1.7}
+.wishbox{text-align:center;padding:12px}
+.wish-display{min-height:95px;display:grid;place-items:center;font:500 clamp(1.35rem,4vw,2.2rem)/1.4 'Playfair Display',Georgia,serif;color:#ffe2ef;margin:25px 0}
+.wish-display span{animation:appear .5s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.footer{text-align:center;padding:38px 10px 10px;color:#cba5c0;font-size:.82rem;line-height:1.9}
+.footer .big-heart{font-size:1.7rem;display:block;margin-bottom:8px;animation:heart 1.4s ease-in-out infinite}
+@keyframes heart{50%{transform:scale(1.2)}}
+.petal{position:absolute;top:-12vh;font-size:var(--size);animation:fall var(--dur) linear forwards;filter:drop-shadow(0 4px 8px #ff5b9b33)}
+@keyframes fall{0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}8%{opacity:.95}100%{transform:translate3d(var(--drift),115vh,0) rotate(var(--spin));opacity:.12}}
+.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff1c6;box-shadow:0 0 13px 4px #ffb5d5;animation:sparkle .9s ease-out forwards}
+@keyframes sparkle{from{transform:scale(.2);opacity:1}to{transform:scale(2.5) translateY(-20px);opacity:0}}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;z-index:9;pointer-events:none;animation:confettiFall var(--dur) cubic-bezier(.1,.7,.2,1) forwards}
+@keyframes confettiFall{to{transform:translate3d(var(--x),110vh,0) rotate(1000deg);opacity:.2}}
+.toast{position:fixed;z-index:15;bottom:25px;left:50%;transform:translate(-50%,140%);padding:14px 20px;border:1px solid #ffbad8a0;border-radius:999px;background:#32143cf2;color:#fff2f8;box-shadow:0 15px 40px #08020f77;transition:transform .4s;max-width:90vw;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+.top-btn{position:fixed;z-index:4;right:18px;bottom:18px;width:45px;height:45px;border:1px solid #ffffff30;border-radius:50%;background:#311638cc;color:#fff;font-size:1.1rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}
+.top-btn.visible{opacity:1;pointer-events:auto}
+@media(max-width:620px){nav{font-size:.67rem}.nav-tag{padding:7px 9px}.timeline{grid-template-columns:1fr}.moment{padding:17px 5px}.hero{padding-top:45px}.section{border-radius:24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div><div id="petals" aria-hidden="true"></div><div id="sparkles" aria-hidden="true"></div><div id="trail" aria-hidden="true"></div>
+<main id="top">
+<nav><div class="brand"><span class="brand-icon">✿</span><span>CLASS LOVE LETTER</span></div><span class="nav-tag">20 · 10 · 2026</span></nav>
+<header class="hero">
+ <div class="kicker"><span class="pulse"></span> A little celebration, a lot of love</div>
+ <h1><span class="line1">Happy</span><span class="line2">Vietnamese Women's Day</span></h1>
+ <p class="hero-sub">Gửi đến tất cả những bông hoa của lớp mình — mong các bạn luôn được yêu thương, tự tin tỏa sáng và có thật nhiều lý do để mỉm cười. 🌷</p>
+ <div class="hero-flower" aria-label="Bó hoa">💐</div>
+ <div class="actions">
+  <button class="btn primary" id="surprise"><span class="ico">🎁</span>Mở món quà bí mật</button>
+  <button class="btn" id="petalBtn"><span class="ico">🌸</span>Gọi mưa hoa</button>
+  <button class="btn" id="soundBtn"><span class="ico">♫</span>Bật giai điệu</button>
+ </div>
+ <div class="scroll-hint">Kéo xuống để mở những lời chúc ↓</div>
+</header>
+
+<section class="section">
+ <div class="section-head"><div class="eyebrow">A note from our class</div><h2>💌 Gửi những cô gái tuyệt vời</h2><p class="lead">Một tấm thiệp nhỏ, thay cho thật nhiều điều dễ thương muốn nói.</p></div>
+ <div class="letterbox">Nhân ngày <strong>Phụ nữ Việt Nam 20/10</strong>, chúc tất cả các bạn nữ của lớp mình luôn vui vẻ, mạnh khỏe, hạnh phúc và học tập thật tốt. Mong rằng mỗi ước mơ của các bạn đều có cơ hội thành hiện thực, mỗi nỗ lực đều được đền đáp và mỗi ngày đến trường đều có một điều đáng nhớ.
+
+Cảm ơn các bạn vì đã mang đến cho tập thể lớp những tiếng cười, sự ấm áp và những màu sắc rất riêng. Hãy luôn tự tin, tử tế với bản thân, can đảm theo đuổi điều mình yêu thích và nhớ rằng các bạn xứng đáng được trân trọng — không chỉ riêng ngày hôm nay.
+
+<strong>Chúc các bạn có một ngày 20/10 ngập tràn hoa, quà, niềm vui và những bất ngờ thật ngọt ngào! Mãi rạng rỡ theo cách riêng của mình nhé. 🌷💖</strong></div>
+ <div class="signature">Thân gửi từ những người bạn cùng lớp ✨</div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div class="eyebrow">Six little wishes</div><h2>Mỗi bạn là một vì sao ✨</h2><p class="lead">Chúc những điều tốt đẹp nhất luôn tìm đến từng bạn nữ trong lớp.</p></div>
+ <div class="grid">
+  <article class="gift"><span class="emoji">🌹</span><b>Rạng rỡ</b><small>Luôn nở nụ cười và tỏa sáng theo cách của riêng mình.</small></article>
+  <article class="gift"><span class="emoji">💎</span><b>Tự tin</b><small>Nhìn thấy giá trị của bản thân và tin vào ước mơ.</small></article>
+  <article class="gift"><span class="emoji">🦋</span><b>Tự do</b><small>Được là chính mình, khám phá và lớn lên từng ngày.</small></article>
+  <article class="gift"><span class="emoji">🍀</span><b>May mắn</b><small>Thi cử thuận lợi, gặp người tốt và nhiều cơ hội hay.</small></article>
+  <article class="gift"><span class="emoji">🎀</span><b>Được yêu thương</b><small>Luôn có người lắng nghe, sẻ chia và ở bên cạnh.</small></article>
+  <article class="gift"><span class="emoji">🌈</span><b>Hạnh phúc</b><small>Ngày bình thường cũng có niềm vui nhỏ xinh.</small></article>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div class="eyebrow">A little reminder</div><h2>Điều ước dành riêng cho bạn 💗</h2><p class="lead">Bấm nút bên dưới để nhận một lời chúc ngẫu nhiên. Mỗi lần bấm là một lời nhắn mới!</p></div>
+ <div class="wishbox"><div class="wish-display" id="wishDisplay"><span>✨ Bạn xứng đáng với những điều thật đẹp ✨</span></div><button class="btn primary" id="newWish">💌 Nhận lời chúc của mình</button></div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div class="eyebrow">Made of memories</div><h2>Mong chúng ta luôn nhớ 🌙</h2><p class="lead">Tuổi học trò sẽ đẹp hơn khi chúng ta cùng nhau tạo nên những kỷ niệm tử tế.</p></div>
+ <div class="timeline">
+  <div class="moment"><div class="num">01</div><h3>Luôn vui vẻ</h3><p>Mong lớp mình lúc nào cũng đầy ắp tiếng cười và những ngày đáng nhớ.</p></div>
+  <div class="moment"><div class="num">02</div><h3>Luôn đoàn kết</h3><p>Cùng động viên, giúp đỡ và tôn trọng nhau trong những lúc khó khăn.</p></div>
+  <div class="moment"><div class="num">03</div><h3>Luôn tỏa sáng</h3><p>Mỗi người có một hành trình riêng — chúc ai cũng tự tin bước tiếp.</p></div>
+ </div>
+</section>
+
+<div class="footer"><span class="big-heart">💖</span><div>Made with love for every girl in our class</div><div>20/10/2026 · Một ngày đặc biệt dành cho những người đặc biệt</div><div style="margin-top:12px;color:#a77c9d">✦ You are appreciated. You are important. You are enough. ✦</div></div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="top-btn" id="topBtn" aria-label="Về đầu trang">↑</button>
+<script>
+const $=id=>document.getElementById(id);
+const sky=$('sky'), petals=$('petals'), sparks=$('sparkles');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const flowers=['🌸','🌷','🌺','🌼','💮','💕','✨','🩷'];
+const wishes=[
+'🌷 Chúc bạn luôn rạng rỡ và được yêu thương thật nhiều!',
+'✨ Mong mọi ước mơ của bạn đều có ngày thành hiện thực.',
+'💗 Chúc bạn học tốt, vui khỏe và luôn tin vào chính mình.',
+'🌹 Mong bạn gặp thật nhiều người tử tế trên hành trình của mình.',
+'🦋 Chúc mỗi ngày của bạn đều có một điều nhỏ bé khiến bạn mỉm cười.',
+'🎀 Chúc bạn nhận được thật nhiều hoa, quà và những lời dễ thương!',
+'🌈 Mong những điều tốt đẹp sẽ đến với bạn vào đúng lúc.',
+'💎 Đừng quên bạn đặc biệt theo cách không ai có thể thay thế.',
+'🍀 Chúc bạn thi đâu thắng đó, làm gì cũng gặp nhiều may mắn.',
+'🌻 Chúc cô gái của hôm nay và tương lai luôn mạnh mẽ, bình an.',
+'🫶 Mong bạn luôn có người lắng nghe và ở cạnh khi cần.',
+'💐 Chúc 20/10 của bạn ngọt ngào hơn cả một bó hoa!'
+];
+let toastTimer, audioCtx=null, melodyTimer=null, noteIndex=0;
+
+function makeSky(){
+ if(reduced)return;
+ for(let i=0;i<70;i++){
+  const s=document.createElement('span');s.className='star';
+  s.textContent=['✦','✧','·','✳','♡'][Math.floor(Math.random()*5)];
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.fontSize=(8+Math.random()*20)+'px';s.style.setProperty('--dur',(2+Math.random()*4)+'s');
+  s.style.animationDelay=(-Math.random()*4)+'s';sky.appendChild(s);
+ }
+ for(let i=0;i<9;i++){
+  const o=document.createElement('span');o.className='orb';
+  o.style.left=Math.random()*100+'%';o.style.top=Math.random()*100+'%';
+  o.style.setProperty('--size',(80+Math.random()*180)+'px');
+  o.style.setProperty('--dx',(Math.random()*100-50)+'px');o.style.setProperty('--dy',(Math.random()*90-45)+'px');
+  o.style.setProperty('--dur',(8+Math.random()*12)+'s');sky.appendChild(o);
+ }
+}
+function rainFlowers(n=35){
+ if(reduced)return;
+ for(let i=0;i<n;i++){
+  const p=document.createElement('span');p.className='petal';p.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+  p.style.left=Math.random()*100+'vw';p.style.setProperty('--size',(14+Math.random()*24)+'px');
+  p.style.setProperty('--drift',(Math.random()*260-130)+'px');p.style.setProperty('--spin',(360+Math.random()*900)+'deg');
+  p.style.setProperty('--dur',(5+Math.random()*8)+'s');p.style.animationDelay=(Math.random()*2)+'s';
+  petals.appendChild(p);p.addEventListener('animationend',()=>p.remove(),{once:true});
+ }
+}
+function confetti(n=130){
+ if(reduced)return;
+ const colors=['#ff72b6','#ffe5a6','#d7a6ff','#ffb2c7','#ffffff','#9ee8dc','#f3a2ff'];
+ for(let i=0;i<n;i++){
+  const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';
+  c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.setProperty('--x',(Math.random()*340-170)+'px');
+  c.style.setProperty('--dur',(2.5+Math.random()*2.5)+'s');c.style.animationDelay=(Math.random()*.7)+'s';
+  c.style.borderRadius=Math.random()>.5?'50%':'2px';document.body.appendChild(c);
+  c.addEventListener('animationend',()=>c.remove(),{once:true});
+ }
+}
+function sparkleBurst(x,y,n=22){
+ if(reduced)return;
+ for(let i=0;i<n;i++){
+  const s=document.createElement('i');s.className='spark';s.style.left=(x+(Math.random()*100-50))+'px';s.style.top=(y+(Math.random()*80-40))+'px';
+  s.style.background=['#fff2b5','#ffb8dc','#ffffff','#e3b5ff'][Math.floor(Math.random()*4)];
+  sparks.appendChild(s);s.addEventListener('animationend',()=>s.remove(),{once:true});
+ }
+}
+function toast(msg){
+ $('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);
+ toastTimer=setTimeout(()=>$('toast').classList.remove('show'),3200);
+}
+$('surprise').addEventListener('click',e=>{
+ rainFlowers(70);confetti(180);sparkleBurst(innerWidth/2,innerHeight/2,55);
+ toast('🎁 Bất ngờ nè! Chúc tất cả các bạn nữ 20/10 thật hạnh phúc!');
+});
+$('petalBtn').addEventListener('click',()=>{rainFlowers(90);toast('🌸 Một cơn mưa hoa đang dành tặng các bạn!');});
+$('newWish').addEventListener('click',()=>{
+ let next;do{next=wishes[Math.floor(Math.random()*wishes.length)]}while(wishes.length>1&&$('wishDisplay').textContent===next);
+ $('wishDisplay').innerHTML='';const span=document.createElement('span');span.textContent=next;$('wishDisplay').appendChild(span);
+ confetti(40);sparkleBurst(innerWidth/2,innerHeight*.55,18);
+});
+$('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('scroll',()=>$('topBtn').classList.toggle('visible',window.scrollY>500));
+document.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')return;sparkleBurst(e.clientX,e.clientY,7);});
+if(!reduced){
+ let lastRain=0;window.addEventListener('scroll',()=>{const now=Date.now();if(now-lastRain>3500){rainFlowers(4);lastRain=now;}},{passive:true});
+}
+function toggleMelody(){
+ if(melodyTimer){clearInterval(melodyTimer);melodyTimer=null;if(audioCtx)audioCtx.suspend();$('soundBtn').innerHTML='<span class="ico">♫</span>Bật giai điệu';toast('♪ Đã tắt giai điệu');return;}
+ try{
+  const AudioContext=window.AudioContext||window.webkitAudioContext;
+  if(!AudioContext){toast('Trình duyệt này chưa hỗ trợ giai điệu.');return;}
+  audioCtx=audioCtx||new AudioContext();audioCtx.resume();
+  const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,698.46,783.99];
+  function playNote(){
+   if(!audioCtx||audioCtx.state!=='running')return;
+   const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+   osc.type='sine';osc.frequency.value=notes[noteIndex%notes.length];noteIndex++;
+   gain.gain.setValueAtTime(.0001,audioCtx.currentTime);
+   gain.gain.exponentialRampToValueAtTime(.045,audioCtx.currentTime+.035);
+   gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.38);
+   osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.4);
+  }
+  playNote();melodyTimer=setInterval(playNote,430);
+  $('soundBtn').innerHTML='<span class="ico">♫</span>Tắt giai điệu';toast('♪ Giai điệu nhỏ đã bật — bấm lại để tắt');
+ }catch(err){toast('Không thể bật âm thanh trên trình duyệt này.');}
+}
+$('soundBtn').addEventListener('click',toggleMelody);
+makeSky();rainFlowers(24);
+</script>
+</body>
+</html>
